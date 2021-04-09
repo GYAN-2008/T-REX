@@ -86,7 +86,7 @@ function draw() {
     //change the trex animation
     trex.changeAnimation("running", trex_running);
     
-    if(keyDown("space") && trex.y >= 159) {
+    if(touches.length > 0 || keyDown("space") && trex.y >= 159) {
       trex.velocityY = -12;
       jumpSound.play();
     }
@@ -128,7 +128,7 @@ function draw() {
     obstaclesGroup.setLifetimeEach(-1);
     cloudsGroup.setLifetimeEach(-1);
     
-    if(mousePressedOver(restart)) {
+    if(touches.length > 0 || mousePressedOver(restart)) {
       reset();
     }
   }
